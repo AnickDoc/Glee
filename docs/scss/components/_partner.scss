@@ -1,0 +1,61 @@
+.partner {
+  position: relative;
+  padding: 100px 0;
+
+  @include _1200 {
+    padding: 80px 0;
+  }
+
+  @include _992 {
+    padding: 50px 0;
+  }
+
+  @include _480 {
+    padding: 40px 0;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -170px;
+    z-index: -5;
+    width: 100%;
+    min-height: 435px;
+    background-color: $bg;
+
+    @include _1200 {
+      top: 0;
+      min-height: 250px;
+    }
+
+    @include _992 {
+      min-height: 200px;
+    }
+
+    @include _480 {
+      min-height: 150px;
+    }
+  }
+
+  &__inner {
+    .slick-track {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &__item {
+    padding: 0 50px;
+  }
+
+  &--small {
+    padding: 114px 0;
+
+    &::before {
+      top: 50px;
+      min-height: 250px;
+    }
+  }
+}

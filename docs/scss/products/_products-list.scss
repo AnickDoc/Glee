@@ -1,0 +1,124 @@
+.products-list {
+  padding-top: 85px;
+  .bg
+
+  @include _992 {
+    padding-top: 20px;
+  }
+
+  &__wrap {
+    display: flex;
+  }
+
+  &__inner {
+    width: 100%;
+  }
+
+  &__filter-btn {
+    position: fixed;
+    right: 15px;
+    top: 35%;
+    z-index: 10;
+    opacity: 0;
+
+    @include _992 {
+      opacity: 1;
+    }
+  }
+
+  &__cards {
+    display: grid;
+    grid-gap: 50px 55px;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding-top: 30px;
+
+    @include _1200 {
+      grid-gap: 15px;
+      margin-bottom: 100px;
+    }
+
+    @include _992 {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    @include _768 {
+      grid-template-columns: 1fr 1fr;
+      margin-bottom: 50px;
+    }
+
+    @include _480 {
+      grid-template-columns: 1fr;
+    }
+
+    &--list {
+      display: block;
+      padding-top: 30px;
+
+      @include _1200 {
+        max-height: 1700px;
+      }
+    }
+  }
+}
+
+.pagination {
+  padding: 83px 0 68px;
+
+  @include _992 {
+    padding: 0;
+  }
+
+  &__inner {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__item {
+    margin-right: 15px;
+  }
+
+  &__item:last-child {
+    margin-right: 0;
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid $blue;
+    padding: 0 20px;
+    min-height: 50px;
+    color: $darkblue;
+
+    &:focus {
+      border-color: #000;
+      color: #000;
+    }
+
+    &:hover {
+      background-color: $light;
+    }
+
+    &:active {
+      border-color: $red;
+      color: $red;
+    }
+
+    &--active {
+      color: #fff;
+      background-color: $blue;
+
+      &:hover {
+        background-color: $blue;
+      }
+    }
+  }
+
+  &--list {
+    padding: 20px 0 70px;
+
+    .pagination__inner {
+      justify-content: start;
+    }
+  }
+}

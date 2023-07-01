@@ -1,0 +1,125 @@
+.team {
+  padding-top: 120px;
+
+  @include _1200 {
+    padding-top: 80px;
+  }
+
+  @include _768 {
+    padding-top: 50px;
+  }
+
+  &__wrap {
+    display: flex;
+
+    @include _1200 {
+      display: block;
+    }
+  }
+
+  &__content {
+    margin-right: 95px;
+    max-width: 305px;
+
+    @include _1200 {
+      margin-right: 0;
+      margin-bottom: 50px;
+      max-width: 100%;
+    }
+
+    @include _480 {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 25px;
+    text-align: left;
+
+    @include _768 {
+      margin-bottom: 15px;
+    }
+  }
+
+  &__text {
+    overflow: hidden;
+    margin-bottom: 38px;
+    max-height: 600px;
+    line-height: 1.8;
+    color: $darkblue;
+
+    @include _768 {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__link {
+    display: block;
+    border-radius: 5px;
+    @extend %poppins-700;
+  }
+
+  &__cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: -40px;
+    max-width: 770px;
+
+    @include _1200 {
+      margin: 0 auto;
+    }
+
+    @include _768 {
+      margin-bottom: -30px;
+      max-width: 370px;
+    }
+  }
+
+  &__item {
+    margin-bottom: 42px;
+
+    @include _480 {
+      margin-bottom: 22px;
+    }
+  }
+
+  &__img {
+    min-height: 320px;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  &__description {
+    position: relative;
+    margin-top: -50px;
+    padding: 25px 0 25px 25px;
+    max-width: 325px;
+    box-shadow: 0 6px 57px 0 rgba(37, 37, 37, 0.05);
+    background-color: #fff;
+  }
+
+  &__name {
+    margin-bottom: 10px;
+    font-size: 22px;
+    color: $accent;
+    @extend %dmsans-700;
+  }
+
+  &__post {
+    color: #565872;
+  }
+
+  &__social {
+    position: absolute;
+    right: 20px;
+    top: 35%;
+  }
+
+  &__social-link {
+    display: inline-flex;
+    margin-right: 5px;
+    width: 40px;
+    height: 40px;
+  }
+}

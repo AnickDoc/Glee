@@ -1,0 +1,401 @@
+.products {
+  padding-top: 70px;
+
+  @include _992 {
+    padding-top: 50px;
+  }
+
+  &__title {
+    margin-bottom: 20px;
+  }
+
+  &__filter {
+    margin-bottom: 75px;
+
+    @include _992 {
+      margin-bottom: 50px;
+    }
+
+    @include _768 {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__cards {
+    display: grid;
+    grid-gap: 35px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    margin-bottom: 192px;
+
+    @include _1200 {
+      grid-gap: 15px;
+      margin-bottom: 100px;
+    }
+
+    @include _992 {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    @include _768 {
+      grid-template-columns: 1fr 1fr;
+      margin-bottom: 50px;
+    }
+
+    @include _480 {
+      grid-template-columns: 1fr;
+    }
+
+    &--list {
+      display: block;
+      padding-top: 30px;
+    }
+  }
+}
+
+.products-card {
+  position: relative;
+  padding: 30px 0;
+  min-width: 250px;
+  max-height: 380px;
+  box-shadow: 0 0 35px 18px #f8f8f8;
+
+  @include _1200 {
+    min-width: 200px;
+  }
+
+  &__img {
+    margin: 0 auto;
+    margin-bottom: 65px;
+    min-height: 200px;
+    max-width: 200px;
+    object-fit: contain;
+
+    @include _992 {
+      margin-bottom: 50px;
+    }
+
+    @include _768 {
+      margin-bottom: 80px;
+      max-width: 150px;
+      max-height: 150px;
+    }
+  }
+
+  &__content {
+    text-align: center;
+  }
+
+  &__name {
+    display: block;
+    margin-bottom: 15px;
+    color: $darkblue;
+    @extend %dmsans-500;
+  }
+
+  &__star {
+    display: none;
+  }
+
+  &__price {
+    color: $blue;
+    @extend %dmsans-700;
+
+    &::before {
+      content: "$";
+    }
+
+    &::after {
+      content: ".00";
+    }
+  }
+
+  &__text {
+    display: none;
+  }
+
+  &:hover .icon {
+    opacity: 1;
+  }
+
+  &--list {
+    display: flex;
+    margin-bottom: 45px;
+    padding: 0;
+    max-height: 500px;
+    box-shadow: none;
+
+    .products-card {
+      &__img {
+        margin-right: 55px;
+        margin-bottom: 0;
+        border: 2px solid #f2f2f2;
+        padding: 75px 20px;
+        width: 100%;
+        max-width: 370px;
+        max-height: 500px;
+        background-color: #fefefe;
+
+        @include _1200 {
+          max-width: 250px;
+        }
+      }
+
+      &__content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: left;
+      }
+
+      &__name {
+        margin-bottom: 25px;
+        font-size: 40px;
+        color: #333;
+        @extend %rubik-400;
+      }
+
+      &__star {
+        display: block;
+        margin-bottom: 35px;
+      }
+
+      &__price {
+        margin-bottom: 20px;
+        font-size: 30px;
+        color: #333;
+        @extend %rubik-400;
+
+        &::before {
+          content: none;
+        }
+
+        &::after {
+          content: "$";
+        }
+      }
+
+      &__text {
+        display: block;
+        margin-bottom: 35px;
+        line-height: 1.8;
+      }
+    }
+
+    .icon {
+      position: static;
+      justify-content: start;
+      opacity: 1;
+
+      &__item:first-child {
+        display: none;
+      }
+
+      &__item:nth-child(2) {
+        &:hover + .icon__item {
+          display: none;
+        }
+      }
+
+      &__link {
+        border-radius: 0;
+
+        &::before {
+          content: "";
+          color: transparent;
+          transition: color 0.6s;
+        }
+
+        &--card {
+          margin-left: 0;
+          background-color: $blue;
+          transition: width 0.6s;
+
+          path {
+            fill: #fff;
+          }
+
+          &:hover {
+            position: relative;
+            border-radius: 5px;
+            width: 210px;
+
+            &::before {
+              content: "add to card";
+              position: absolute;
+              text-transform: uppercase;
+              color: #fff;
+            }
+
+            path {
+              fill: transparent;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.icon {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 55%;
+  display: flex;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s;
+
+  @include _1200 {
+    opacity: 1;
+  }
+
+  &__link {
+    margin: 0 8px;
+    background-color: #fff;
+    cursor: pointer;
+
+    @include _1200 {
+      border: 1px solid $blue;
+    }
+
+    &:hover {
+      background-color: $blue;
+    }
+
+    &:active {
+      background-color: $dark;
+    }
+  }
+}
+
+.chosen {
+  &__wrap {
+    display: flex;
+    justify-content: space-between;
+
+    @include _992 {
+      flex-wrap: wrap;
+    }
+  }
+
+  &__item {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin-right: 30px;
+    width: 100%;
+    min-height: 390px;
+    max-width: 870px;
+    background-color: $powdery;
+
+    @include _1200 {
+      margin-right: 15px;
+    }
+
+    @include _992 {
+      margin: 0 auto;
+      margin-bottom: 15px;
+    }
+
+    @include _768 {
+      min-height: 320px;
+    }
+
+    @include _480 {
+      margin-bottom: 15px;
+      min-height: 540px;
+    }
+
+    &:last-child {
+      margin-right: 0;
+      @include _992 {
+        margin: 0 auto;
+      }
+    }
+  }
+
+  &__inner {
+    position: relative;
+    display: flex;
+    width: 100%;
+    max-width: 600px;
+
+    @include _480 {
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: auto;
+    padding-right: 20px;
+    max-width: 350px;
+
+    @include _480 {
+      margin: 0 auto;
+      padding: 0 15px;
+    }
+  }
+
+  &__img {
+    position: absolute;
+    top: -90px;
+    min-height: 400px;
+    max-width: 240px;
+    object-fit: contain;
+    object-position: bottom;
+
+    @include _1200 {
+      position: static;
+      margin: 0 15px;
+      padding: 70px 0;
+      max-width: 150px;
+    }
+
+    @include _480 {
+      padding-top: 0;
+      padding-bottom: 35px;
+      min-height: 200px;
+    }
+  }
+
+  &__title {
+    overflow: hidden;
+    margin-bottom: 15px;
+    max-height: 60px;
+    font-size: 26px;
+    line-height: 1.2;
+    color: $darkblue;
+    @extend %dmsans-700;
+
+    @include _768 {
+      max-height: 50px;
+      font-size: 20px;
+    }
+
+    @include _480 {
+      max-height: 40px;
+      font-size: 18px;
+    }
+  }
+
+  &__subtitle {
+    overflow: hidden;
+    margin-bottom: 30px;
+    max-height: 80px;
+    line-height: 1.8;
+    color: $darkblue;
+
+    @include _480 {
+      margin-bottom: 20px;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+  }
+}

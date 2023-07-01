@@ -1,0 +1,297 @@
+body {
+  font-size: 16px;
+  line-height: 1.3;
+  color: $accent;
+  background-color: #fff;
+  @extend %rubik-400;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.main {
+  flex: 1 1 auto;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 0 15px;
+  max-width: 1800px;
+
+  &--small {
+    max-width: 1200px;
+  }
+}
+
+.link {
+  outline: transparent;
+  color: $accent;
+  transition: color 0.3s;
+
+  &:focus {
+    color: $red;
+  }
+
+  &:hover {
+    color: $blue;
+  }
+
+  &:active {
+    color: $dark;
+  }
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  outline: transparent;
+  border: 1px solid transparent;
+  border-radius: 50%;
+  padding: 0;
+  width: 50px;
+  height: 50px;
+  background-color: $light;
+  transition: all 0.3s;
+
+  path {
+    transition: fill 0.3s;
+  }
+
+  &:focus {
+    border: 1px solid $darkblue;
+  }
+
+  &:hover path {
+    fill: #fff;
+  }
+
+  &:hover {
+    background-color: $blue;
+  }
+
+  &:active {
+    background-color: $accent;
+  }
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.btn {
+  position: relative;
+  display: block;
+  margin: 0;
+  border: none;
+  padding: 20px 50px 20px 25px;
+  max-width: 200px;
+  font-size: 15px;
+  color: #fff;
+  background-color: $blue;
+  transition: background-color 0.3s;
+  cursor: pointer;
+  @extend %rubik-500;
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 80%;
+    top: 50%;
+    width: 25px;
+    height: 10px;
+    background-image: url("../images/icons/arrow-btn.svg");
+    background-repeat: no-repeat;
+    transform: translateY(-50%);
+  }
+
+  &:focus {
+    background-color: $darkblue;
+  }
+
+  &:hover {
+    background-color: $accent;
+  }
+
+  &:active {
+    background-color: $dark;
+  }
+
+  &--transparent {
+    border: 1px solid #b3b7b5;
+    border-radius: 5px;
+    max-width: 180px;
+    color: #556f7b;
+    background-color: transparent;
+
+    &::before {
+      background-image: url("../images/icons/arrow-btn-dark.svg");
+    }
+
+    &:focus,
+    &:active,
+    &:hover {
+      color: #fff;
+
+      &::before {
+        background-image: url("../images/icons/arrow-btn.svg");
+      }
+    }
+  }
+}
+
+.title {
+  font-size: 36px;
+  text-align: center;
+  color: $dark;
+  @extend %dmsans-700;
+
+  @include _1200 {
+    font-size: 26px;
+  }
+}
+
+.mix-filter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &::-webkit-scrollbar {
+    height: 3px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background-color: $blue;
+  }
+
+  @include _992 {
+    flex-wrap: wrap;
+  }
+
+  @include _480 {
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    overflow-x: scroll;
+    min-width: 100%;
+    min-height: 55px;
+  }
+
+  &__item {
+    margin-right: 20px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &__btn {
+    outline: transparent;
+    border: none;
+    color: #8b8b8b;
+    background-color: #fff;
+    transition: color 0.3s;
+    cursor: pointer;
+    @extend %dmsans-700;
+
+    @include _992 {
+      display: block;
+      padding: 12px;
+    }
+
+    &:focus {
+      color: $red;
+    }
+
+    &:hover {
+      color: $blue;
+    }
+
+    &:active {
+      color: $dark;
+    }
+  }
+
+  .mixitup-control-active {
+    color: #1a1a1a;
+  }
+}
+
+.sr-only {
+  position: absolute;
+  overflow: hidden;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  width: 1px;
+  height: 1px;
+  white-space: nowrap;
+  clip: rect(0, 0, 0, 0);
+}
+
+.note {
+  border-top: 1px solid #e0e0e0;
+  font-size: 12px;
+  color: #222933;
+
+  &__date {
+    margin-right: 30px;
+
+    &::before {
+      background-image: url("../images/icons/calendar.svg");
+    }
+  }
+
+  &__author {
+    &::before {
+      background-image: url("../images/icons/user.svg");
+    }
+  }
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  &--white {
+    color: #fff;
+
+    .note__date::before {
+      background-image: url("../images/icons/calendar-w.svg");
+    }
+
+    .note__author::before {
+      background-image: url("../images/icons/user-w.svg");
+    }
+  }
+
+  &__date,
+  &__author {
+    position: relative;
+    display: inline-block;
+    padding-left: 22px;
+    text-transform: uppercase;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: -2px;
+      width: 17px;
+      height: 17px;
+    }
+  }
+}
+
+%clien {
+  position: absolute;
+  overflow: hidden;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  width: 1px;
+  height: 1px;
+  white-space: nowrap;
+  clip: rect(0, 0, 0, 0);
+}

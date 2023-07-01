@@ -1,0 +1,55 @@
+.top {
+  padding: 29px 0;
+  background-color: $light;
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__title {
+    font-size: 36px;
+    color: $black;
+    @extend %rubik-300;
+
+    @include _1200 {
+      font-size: 26px;
+    }
+  }
+}
+
+.breadcrumbs {
+  display: flex;
+
+  &__link {
+    font-size: 14px;
+    color: $black;
+    @extend %rubik-400;
+
+    @include _1200 {
+      padding: 13px 0;
+    }
+  }
+
+  &__item {
+    position: relative;
+    margin-right: 20px;
+
+    &::after {
+      content: "/";
+      position: absolute;
+      right: -15px;
+      top: 0;
+    }
+
+    &:last-child {
+      margin-right: 0;
+
+      &::after {
+        content: none;
+      }
+    }
+  }
+}

@@ -1,0 +1,163 @@
+.creative {
+  padding: 120px 0;
+
+  @include _992 {
+    padding: 50px 0;
+  }
+
+  @include _480 {
+    padding-bottom: 0;
+  }
+
+  &__wrap {
+    background-position: left top;
+    background-size: 570px 675px;
+    background-repeat: no-repeat;
+
+    @include _1200 {
+      background-size: 400px 505px;
+    }
+
+    @include _992 {
+      background-size: 0 0;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: auto;
+    min-height: 675px;
+    max-width: 555px;
+
+    @include _992 {
+      padding: 0;
+      max-width: 100%;
+    }
+  }
+
+  &__description {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  &__num {
+    margin-right: 28px;
+    font-size: 140px;
+    line-height: 1;
+    color: $blue;
+    @extend %rubik-700;
+
+    @include _768 {
+      font-size: 100px;
+    }
+  }
+
+  &__subtitle {
+    padding-top: 20px;
+    line-height: 2;
+    color: $darkblue;
+
+    @include _768 {
+      line-height: 1.6;
+    }
+  }
+
+  &__title {
+    margin-bottom: 35px;
+    text-align: left;
+    color: $darkblue;
+
+    @include _768 {
+      margin-bottom: 25px;
+    }
+  }
+
+  &__text {
+    overflow: hidden;
+    margin-bottom: 64px;
+    max-height: 250px;
+    line-height: 1.8;
+    color: $darkblue;
+
+    @include _768 {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__info {
+    border-top: 2px solid #ebeef3;
+    padding-top: 30px;
+  }
+
+  &__row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @include _480 {
+      display: block;
+    }
+  }
+
+  &__item {
+    border-right: 1px solid #ebeef3;
+    width: 33.333%;
+
+    @include _480 {
+      margin-bottom: 20px;
+      width: 100%;
+    }
+
+    &:last-child {
+      border: none;
+    }
+  }
+
+  &__info-box {
+    position: relative;
+    margin: 0 auto;
+    padding-left: 50px;
+    max-width: 140px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 13px;
+      width: 40px;
+      height: 42px;
+      background-repeat: no-repeat;
+    }
+
+    &--projects::before {
+      background-image: url("../images/icons/creative-info1.png");
+    }
+
+    &--revenue::before {
+      background-image: url("../images/icons/creative-info2.png");
+    }
+
+    &--awards::before {
+      background-image: url("../images/icons/creative-info3.png");
+    }
+  }
+
+  &__info-num {
+    display: block;
+    font-size: 36px;
+    color: $darkblue;
+    @extend %dmsans-700;
+
+    @include _768 {
+      font-size: 26px;
+    }
+  }
+
+  &__info-text {
+    color: #4c4c4c;
+    @extend %dmsans-700;
+  }
+}

@@ -1,0 +1,65 @@
+.video {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  outline: transparent;
+  border: 1px solid transparent;
+  width: 100%;
+  min-height: 500px;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  @include _1200 {
+    min-height: 400px;
+  }
+
+  @include _768 {
+    min-height: 300px;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    transition: background-color 0.3s;
+  }
+
+  svg {
+    @include _768 {
+      width: 100px;
+      height: 100px;
+    }
+  }
+
+  circle {
+    transition: fill 0.3s;
+  }
+
+  &:focus {
+    border: 1px solid $red;
+
+    circle {
+      fill: $red;
+    }
+  }
+
+  &:hover {
+    &::after {
+      background-color: rgba(29, 25, 25, 0.445);
+    }
+
+    circle {
+      fill: $red;
+    }
+  }
+
+  &:active {
+    &::after {
+      background-color: rgba(148, 20, 20, 0.521);
+    }
+  }
+}

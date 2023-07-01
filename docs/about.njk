@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glee | about</title>
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/style.min.css">
+  </head>
+
+  <body>
+
+    <div class="wrapper">
+
+      {% include 'app/html/components/_header.html' %}
+
+      <main class="main">
+        
+        {% include 'app/html/about/_about-top.html' %}
+
+        {% include 'app/html/about/_creative.html' %}
+
+        {% include 'app/html/about/_about-info.html' %}
+
+        {% include 'app/html/about/_team.html' %}
+        
+        {% include 'app/html/components/_articles.html' %}
+        
+        {% include 'app/html/components/_partner.html' %}
+
+      </main>
+
+      {% include 'app/html/components/_footer.html' %}
+
+    </div>
+
+    <script src="js/main.min.js"></script>
+  </body>
+
+</html>

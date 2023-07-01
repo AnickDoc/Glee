@@ -1,0 +1,27 @@
+@import "vars";
+@import "fonts";
+@import "libs";
+@import "reset";
+@import "global";
+
+@import "components/top";
+@import "components/burger";
+@import "components/header";
+@import "components/video";
+@import "components/articles";
+@import "components/partner";
+@import "components/footer";
+
+@import "index/top-slider";
+@import "index/info";
+@import "index/products";
+@import "index/design";
+
+@import "about/creative";
+@import "about/about-info";
+@import "about/team";
+
+@import "products/products-list";
+@import "products/products-form";
+
+@import "blog/blog";
